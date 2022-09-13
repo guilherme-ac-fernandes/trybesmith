@@ -8,7 +8,7 @@ export default class UserService {
     this.model = new OrderModel();
   }
 
-  public async getAll() { 
+  public async getAll(): Promise<IOrder[]> { 
     const orders = await this.model.getAll();
     return orders;
   }
