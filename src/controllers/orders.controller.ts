@@ -9,7 +9,7 @@ export default class ProductController {
   }
 
   public async getAll(_req: Request, res: Response) {  
-    const orders = await this.service.getAll();
-    return res.status(200).json(orders);
+    const { code, data } = await this.service.getAll();
+    return res.status(code).json(data);
   }
 }

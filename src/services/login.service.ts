@@ -11,7 +11,6 @@ export default class UserService {
 
   public async login(user: ILogin) { 
     const foundUser = await this.model.login(user.username);
-
     if (!foundUser || foundUser.password !== user.password) {
       return { code: 401, message: 'Username or password invalid' };
     }

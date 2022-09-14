@@ -2,7 +2,7 @@ import { Pool, ResultSetHeader } from 'mysql2/promise';
 import { IUser, ICreateUser } from '../interfaces/IUser';
 import connection from './connection';
 
-export default class ProductModel {
+export default class UserModel {
   private connection: Pool;
 
   constructor() {
@@ -16,9 +16,8 @@ export default class ProductModel {
       VALUES (?, ?, ?, ?)
     `;
     const values = [username, classe, level, password];
-
     const [dataInserted] = await this.connection.execute<ResultSetHeader>(query, values);
-   
+  
     const { insertId: id } = dataInserted;
     return { id, ...product } as ICreateUser;
   }

@@ -12,6 +12,6 @@ export default class UserService {
   public async create(user: IUser) { 
     const foundUser = await this.model.create(user);
     const token = createToken(foundUser.id, user.username);
-    return token;
+    return { code: 201, data: token };
   }
 }

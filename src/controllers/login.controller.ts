@@ -11,7 +11,6 @@ export default class ProductController {
 
   public async create(req: Request, res: Response, next: NextFunction) {
     const user = req.body as ILogin;
-    
     const { code, data, message } = await this.service.login(user);
     if (message) {
       return next({ code, message });
