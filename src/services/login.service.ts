@@ -2,7 +2,7 @@ import createToken from '../helpers/createToken';
 import { ILogin } from '../interfaces/IUser';
 import LoginModel from '../models/login.model';
 
-export default class UserService {
+export default class LoginService {
   private model: LoginModel;
 
   constructor() {

@@ -14,4 +14,9 @@ export default class UserService {
     const token = createToken(foundUser.id, user.username);
     return { code: 201, data: token };
   }
+
+  public async getUserById(userId: number) {
+    const user = await this.model.getUserById(userId);
+    return user;
+  }
 }
