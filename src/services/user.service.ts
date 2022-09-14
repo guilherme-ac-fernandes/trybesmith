@@ -1,5 +1,5 @@
 import createToken from '../helpers/createToken';
-import IUser from '../interfaces/IUser';
+import { IUser } from '../interfaces/IUser';
 import UserModel from '../models/user.model';
 
 export default class UserService {
@@ -10,8 +10,8 @@ export default class UserService {
   }
 
   public async create(user: IUser) { 
-    await this.model.create(user);
-    const token = createToken(user.username);
+    const foundUser = await this.model.create(user);
+    const token = createToken(foundUser.id, user.username);
     return token;
   }
 }

@@ -4,8 +4,8 @@ import { sign, SignOptions } from 'jsonwebtoken';
 
 const JWT_SECRET = 'algo_super_secreto';
 
-export default (username: string) => {
+export default (id: number, username: string) => {
   const jwtConfig: SignOptions = { expiresIn: '1d', algorithm: 'HS256' };
-  const token = sign({ username }, JWT_SECRET, jwtConfig);
+  const token = sign({ id, username }, JWT_SECRET, jwtConfig);
   return token;
 };
