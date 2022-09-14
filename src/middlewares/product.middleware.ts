@@ -29,13 +29,10 @@ const validateAmount = (amount: string) => {
 
 export default (req: Request, _res: Response, next: NextFunction) => {
   const { name, amount } = req.body as IProduct;
-  console.log(req.body);
-  
   const nameValidate = validateName(name);
   if (nameValidate !== true) {
     return next(nameValidate);
   }
-
   const amountValidate = validateAmount(amount);
   if (amountValidate !== true) {
     return next(amountValidate);
