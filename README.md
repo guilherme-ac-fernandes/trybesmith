@@ -4,7 +4,7 @@ Consiste em uma API para criação de itens e vendas de uma loja de produtos med
 
 * Contruída com Node.js, Express, Typescript, MySQL e Docker
 * Utilizando as práticas do REST
-* Aplicada Arquitetura de Software, com as camadas de Modelo, Serviço e de Controladores
+* Aplicando Arquitetura de Software, com as camadas de Modelo, Serviço e de Controladores
 
 
 ### Instruções
@@ -33,7 +33,7 @@ npm start // para iniciar a aplicação
 | Método | Funcionalidade | URL |
 |---|---|---|
 | `POST` | Realiza o cadastro de um produto | http://localhost:3000/products |
-| `GET` | Retorna a listagem de todos os produtos | http://localhost:3000/products |
+| `GET` | Retorna uma listagem de todos os produtos cadastrados | http://localhost:3000/products |
 
 Nessa requisição POST é necessário informar o seguinte JSON:
 
@@ -81,7 +81,7 @@ Nessa requisição POST é necessário informar o seguinte JSON:
 | Método | Funcionalidade | URL |
 |---|---|---|
 | `GET` | Retorna uma listagem com todos os pedidos | http://localhost:3000/orders |
-| `POST` | Realiza o cadastro de novos pedidos, podendo ser realizando apenas usuários com token válido | http://localhost:3000/orders |
+| `POST` | Realiza o cadastro de novos pedidos, podendo ser realizando apenas por usuários com token válido | http://localhost:3000/orders |
 
 Nessa requisição POST é necessário informar o seguinte JSON:
 
