@@ -4,10 +4,10 @@ import UserService from '../services/user.service';
 
 const JWT_SECRET = 'algo_super_secreto';
 
-// interface IToken {
-//   id: number,
-//   username: string,
-// }
+interface IToken {
+  id: number,
+  username: string,
+}
 
 interface NewRequest extends Request {
   userId?: number,
@@ -19,7 +19,7 @@ export default async (req: NewRequest, _res: Response, next: NextFunction) => {
     if (!token || token.length === 0) {
       return next({ code: 401, message: 'Token not found' });
     }
-    const validateToken: any = verify(token, JWT_SECRET);
+    const validateToken: IToken = verify(token, JWT_SECRET) as IToken;
     const service = new UserService();
     const user = await service.getUserById(validateToken.id);
     if (user.username !== validateToken.username) {
