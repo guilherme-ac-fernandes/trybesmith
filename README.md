@@ -2,7 +2,7 @@
 
 Consiste em uma API para criação de itens e vendas de uma loja de produtos mediavais, utilizando TypeScript. 
 
-* Contruída com Node.js, Express, Typescript, MySQL e Docker
+* Construída com Node.js, Express, Typescript, MySQL e Docker
 * Utilizando as práticas do REST
 * Aplicando Arquitetura de Software, com as camadas de Modelo, Serviço e de Controladores
 
